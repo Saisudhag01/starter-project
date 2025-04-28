@@ -62,6 +62,9 @@ pipeline {
                 sh '''
                     git config user.email "saisudhagurumoorthy@gmail.com"
                     git config user.name "Saisudhag01"
+                    rm -rf temp-repo
+                    git clone https://${GITHUB_TOKEN}@github.com/Saisudhag01/CI-CD-implementation.git temp-repo
+                    cd temp-repo
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" deployment.yml
                     git add deployment.yml
