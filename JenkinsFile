@@ -1,6 +1,12 @@
 pipeline {
   agent any
   stages {
+    stage('Cleanup Workspace') {
+  steps {
+    cleanWs()
+  }
+}
+
     stage('Checkout') {
       steps {
         sh 'echo passed'
