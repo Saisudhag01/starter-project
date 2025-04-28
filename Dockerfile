@@ -3,7 +3,7 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 
 # Simply the artifact path
-ARG ARTIFACT=target/starter-project-0.0.1-SNAPSHOT.jar
+ARG ARTIFACT=target/starter-project-0.0.1-SNAPSHOT.jar.original
 
 
 WORKDIR /opt/app
