@@ -2,13 +2,10 @@
 # But make sure to use the correct version of Java
 FROM adoptopenjdk/openjdk11:alpine-jre
 
-# Simply the artifact path
-ARG ARTIFACT=target/starter-project-0.0.1-SNAPSHOT.jar
-
 
 WORKDIR /opt/app
 
-COPY ${ARTIFACT} app.jar
+COPY target/starter-project-0.0.1-SNAPSHOT.jar app.jar
 
 # This should not be changed
 ENTRYPOINT ["java","-jar","app.jar"]
